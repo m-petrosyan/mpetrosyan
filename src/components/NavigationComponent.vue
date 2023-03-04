@@ -17,8 +17,11 @@
 </template>
 
 <script>
+import mainMixin from "@/mixins/mainMixin";
+
 export default {
   name: "NavigationComponent",
+  mixins: [mainMixin],
   data() {
     return {
       scroll: false,
@@ -29,9 +32,6 @@ export default {
         {title: 'contacts'},
       ]
     }
-  },
-  props: {
-    wClass: String
   },
   mounted() {
     this.hash = window.location.hash.slice(1)
@@ -64,7 +64,7 @@ header {
   backdrop-filter: blur(3px);
   padding: 10px 10vw;
   font-weight: 500;
-  z-index: 2;
+  z-index: 5;
   transition: all 0.5s;
 
   &.scroll {

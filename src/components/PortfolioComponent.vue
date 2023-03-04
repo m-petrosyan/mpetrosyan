@@ -114,6 +114,12 @@ export default {
       }
 
       .card {
+
+        &:hover .item .img .info {
+          height: 40%;
+          opacity: 1;
+        }
+
         & figure {
           position: relative;
           overflow: hidden;
@@ -123,6 +129,7 @@ export default {
           position: absolute;
           top: 0;
           left: -75%;
+          z-index: 1;
           display: block;
           content: '';
           width: 50%;
@@ -165,12 +172,8 @@ export default {
             margin: auto;
             overflow: hidden;
 
-            &:hover .info {
-              height: 40%;
-              opacity: 1;
-            }
-
             .info {
+              z-index: 2;
               height: 0;
               opacity: 0;
               transition: all .3s;
