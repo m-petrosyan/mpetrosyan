@@ -4,7 +4,7 @@
       <h3 class="section-title">
         Contacts
       </h3>
-      <div class="wrapper">
+      <div class="wrapper" :class="wClass">
         <a href="https://www.linkedin.com/in/miqayel-petrosyan-754349185/" target="_blank" class="item">
           <div class="icon">
             <img src="@/assets/images/contact/linkedin.png" alt="">
@@ -53,8 +53,11 @@
 </template>
 
 <script>
+import mainMixin from "@/mixins/mainMixin";
+
 export default {
-  name: "ContactsComponent"
+  name: "ContactsComponent",
+  mixins: [mainMixin]
 }
 </script>
 
@@ -64,7 +67,20 @@ export default {
     .wrapper {
       display: flex;
       gap: 130px;
+      flex-wrap: wrap;
       justify-content: center;
+
+      &.m {
+        flex-wrap: wrap;
+
+        .item {
+          width: 25%;
+        }
+      }
+
+      &.s {
+        flex-direction: column;
+      }
 
       .item {
         text-align: center;

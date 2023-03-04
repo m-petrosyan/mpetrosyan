@@ -1,12 +1,12 @@
 <template>
   <header :class="{'scroll':scroll}">
-    <nav class="navbar">
+    <nav class="navbar" :class="wClass">
       <RouterLink to="/" class="logo">
         <img src="@/assets/images/logo.svg" alt="logo" height="25">
       </RouterLink>
       <ul class="menu">
-        <li v-for="item in menu" :key="item.title">
-          <a :href="'#'+item.title">{{ item.title }}</a>
+        <li v-for="item in menu" :key="item.title" :id="item.id" @click="changeHash(item.title)">
+          <a :href="'#'+item.title" :class="{'active': this.hash === item.title}">{{ item.title }}</a>
         </li>
         <li>
           <a target="_blank" href="/src/assets/other_files/cv.pdf">Cv</a>
@@ -30,9 +30,11 @@ export default {
       ]
     }
   },
+  props: {
+    wClass: String
+  },
   mounted() {
-    this.hash = window.location.hash
-
+    this.hash = window.location.hash.slice(1)
   },
   created() {
     window.addEventListener('scroll', this.handleScroll);
@@ -43,6 +45,9 @@ export default {
   methods: {
     handleScroll() {
       this.scroll = window.top.scrollY > 0
+    },
+    changeHash(el) {
+      this.hash = el
     }
   },
 }
@@ -81,13 +86,20 @@ header {
         }
       }
     }
-
-
   }
 
   .navbar {
     display: flex;
     justify-content: space-between;
+
+
+    &.s {
+      justify-content: center;
+
+      .menu {
+        display: none;
+      }
+    }
 
     .logo {
       img {
@@ -103,13 +115,24 @@ header {
       list-style: none;
 
       a {
-        color: #181818;
+        background: linear-gradient(to right, var(--green), var(--green) 50%, #181818 50%);
         text-transform: capitalize;
         font-size: 17px;
         transition: all .3s;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 100%;
+        background-position: 100%;
+
+        &:hover {
+          background-position: 0 100%;
+        }
 
         &.active {
-          color: var(--green);
+          background-position: 0 100%;
+          //background: linear-gradient(to right, var(--green), var(--green) 50%, #181818 50%);
+          //color: var(--green);
         }
       }
     }

@@ -4,7 +4,7 @@
       <h3 class="section-title">
         Skills
       </h3>
-      <div class="wrapper">
+      <div class="wrapper" :class="wClass">
         <div class="card" v-for="item in skills" :key="item.title">
           <figure class="item">
             <div class="logo" :style="{backgroundImage: getImg(item.img)}"/>
@@ -24,6 +24,7 @@ export default {
   mixins: [mainMixin],
   data() {
     return {
+      var2: '600px',
       directory: 'skills_icons',
       skills: [
         {
@@ -100,6 +101,14 @@ export default {
       grid-template-columns: auto auto auto auto;
       gap: 30px 10px;
 
+      &.m {
+        grid-template-columns: auto auto auto;
+      }
+
+      &.s {
+        grid-template-columns: auto auto;
+      }
+
       .card {
 
         &:hover .item {
@@ -115,7 +124,6 @@ export default {
               opacity: 1;
             }
           }
-
         }
 
         .item {

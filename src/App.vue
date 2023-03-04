@@ -1,9 +1,9 @@
 <template>
-  <NavigationComponent/>
+  <NavigationComponent :wClass="wClass"/>
   <main>
-    <SkillsComponent/>
-    <PortfolioComponent/>
-    <ContactComponent/>
+    <SkillsComponent :wClass="wClass"/>
+    <PortfolioComponent :wClass="wClass"/>
+    <ContactComponent :wClass="wClass"/>
   </main>
 </template>
 
@@ -12,17 +12,15 @@ import NavigationComponent from "@/components/NavigationComponent.vue";
 import SkillsComponent from "@/components/SkillsComponent.vue";
 import PortfolioComponent from "@/components/PortfolioComponent.vue";
 import ContactComponent from "@/components/ContactComponent.vue";
+import appMixin from "@/mixins/appMixin";
 
 export default {
+  mixins: [appMixin],
   components: {
     ContactComponent,
     NavigationComponent,
     SkillsComponent,
     PortfolioComponent
-  },
-  mounted() {
-    window.location.hash = location.hash
-    console.log(location.hash)
   }
 }
 </script>

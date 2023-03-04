@@ -4,7 +4,7 @@
       <h3 class="section-title">
         Portfolio
       </h3>
-      <div class="wrapper">
+      <div class="wrapper" :class="wClass">
         <div class="card" v-for="item in projects" :key="item.title">
           <figure class="item">
             <div class="img" :style="{backgroundImage: getImg(item.img)}">
@@ -86,6 +86,13 @@ export default {
         },
       ]
     }
+  },
+  methods: {
+    startStat(entries) {
+      if (entries[0].isIntersecting)
+        console.log(entries[0])
+      // console.log(entries, observer, isIntersecting, ratio)
+    }
   }
 }
 </script>
@@ -97,6 +104,14 @@ export default {
       display: grid;
       grid-template-columns: auto auto auto;
       gap: 80px 10px;
+
+      &.m {
+        grid-template-columns: auto auto;
+      }
+
+      &.s {
+        grid-template-columns: auto;
+      }
 
       .card {
         & figure {
