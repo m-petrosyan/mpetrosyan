@@ -1,10 +1,15 @@
 <template>
   <section id="skills">
-    <div class="wrapper">
-      <div class="card" v-for="item in skills" :key="item.title">
-        <div class="item">
-          <div class="logo" :style="{backgroundImage: getImg(item.img)}"/>
-          <div class="title">{{ item.title }}</div>
+    <div class="content">
+      <h3 class="section-title">
+        Skills
+      </h3>
+      <div class="wrapper">
+        <div class="card" v-for="item in skills" :key="item.title">
+          <figure class="item">
+            <div class="logo" :style="{backgroundImage: getImg(item.img)}"/>
+            <div class="title">{{ item.title }}</div>
+          </figure>
         </div>
       </div>
     </div>
@@ -76,7 +81,8 @@ export default {
         {
           title: 'Git',
           img: 'git.svg'
-        }, {
+        },
+        {
           title: 'Photoshop',
           img: 'ps.svg'
         },
@@ -88,25 +94,42 @@ export default {
 
 <style scoped lang="scss">
 #skills {
-  .wrapper {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 30px 10px;
+  .content {
+    .wrapper {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      gap: 30px 10px;
 
-    .card {
-      background-color: white;
+      .card {
 
-      .item {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
+        &:hover .item {
+          animation: flash 1.5s;
+          transform: scale(1.2);
+          transition: 0.5s;
 
-        .logo {
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: 90px;
-          width: 100%;
-          height: 100px;
+          @keyframes flash {
+            0% {
+              opacity: .4;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+
+        }
+
+        .item {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+
+          .logo {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 90px;
+            width: 100%;
+            height: 100px;
+          }
         }
       }
     }

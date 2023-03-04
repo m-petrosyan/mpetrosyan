@@ -3,17 +3,32 @@
   <main>
     <SkillsComponent/>
     <PortfolioComponent/>
+    <ContactComponent/>
   </main>
 </template>
 
-<script setup>
+<script>
 import NavigationComponent from "@/components/NavigationComponent.vue";
 import SkillsComponent from "@/components/SkillsComponent.vue";
-import PortfolioComponent from "@/components/PortfolioComponent.vue";</script>
+import PortfolioComponent from "@/components/PortfolioComponent.vue";
+import ContactComponent from "@/components/ContactComponent.vue";
+
+export default {
+  components: {
+    ContactComponent,
+    NavigationComponent,
+    SkillsComponent,
+    PortfolioComponent
+  },
+  mounted() {
+    window.location.hash = location.hash
+    console.log(location.hash)
+  }
+}
+</script>
 
 <style scoped>
 main {
-  max-width: 1280px;
-  margin: auto;
+//margin: auto auto 100px;
 }
 </style>

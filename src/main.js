@@ -1,6 +1,8 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from './App.vue'
+import intersection from "v-intersection";
+import './assets/style/main.scss'
 
-import './assets/main.css'
-
-createApp(App).mount('#app')
+createApp(App)
+    .use(intersection)
+    .mount('#app')

@@ -1,22 +1,15 @@
 <template>
-  <header>
+  <header :class="{'scroll':scroll}">
     <nav class="navbar">
       <RouterLink to="/" class="logo">
-        <img src="@/assets/logo.svg" alt="logo" height="25">
+        <img src="@/assets/images/logo.svg" alt="logo" height="25">
       </RouterLink>
       <ul class="menu">
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-        <li></li>
-        <li>
-          <a href="#portfolio">Portfolio</a>
+        <li v-for="item in menu" :key="item.title">
+          <a :href="'#'+item.title">{{ item.title }}</a>
         </li>
         <li>
-          <a href="#contact">Contact</a>
-        </li>
-        <li>
-          <a target="_blank" href="/src/assets/cv.pdf">Cv</a>
+          <a target="_blank" href="/src/assets/other_files/cv.pdf">Cv</a>
         </li>
       </ul>
     </nav>
@@ -25,7 +18,33 @@
 
 <script>
 export default {
-  name: "NavigationComponent"
+  name: "NavigationComponent",
+  data() {
+    return {
+      scroll: false,
+      hash: location.hash,
+      menu: [
+        {title: 'skills'},
+        {title: 'portfolio'},
+        {title: 'contacts'},
+      ]
+    }
+  },
+  mounted() {
+    this.hash = window.location.hash
+
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  unmounted() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      this.scroll = window.top.scrollY > 0
+    }
+  },
 }
 </script>
 
@@ -37,9 +56,34 @@ header {
   top: 0;
   width: 100%;
   height: 50px;
-  background-color: rgb(243 243 239 / 93%);
   backdrop-filter: blur(3px);
   padding: 10px 10vw;
+  font-weight: 500;
+  z-index: 2;
+  transition: all 0.5s;
+
+  &.scroll {
+    height: 40px;
+    padding: 5px 10vw;
+    background-color: rgb(243 243 239 / 93%);
+    box-shadow: rgb(99 99 99 / 20%) 0 -1px 8px 0px;
+
+    .navbar {
+      .logo {
+        img {
+          height: 20px;
+        }
+      }
+
+      .menu {
+        a {
+          font-size: 15px;
+        }
+      }
+    }
+
+
+  }
 
   .navbar {
     display: flex;
@@ -48,6 +92,7 @@ header {
     .logo {
       img {
         vertical-align: middle;
+        transition: .3s;
       }
     }
 
@@ -59,7 +104,13 @@ header {
 
       a {
         color: #181818;
-        text-decoration: none;
+        text-transform: capitalize;
+        font-size: 17px;
+        transition: all .3s;
+
+        &.active {
+          color: var(--green);
+        }
       }
     }
   }
