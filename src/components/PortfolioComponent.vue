@@ -70,22 +70,22 @@ export default {
               'Searching for Tasks: To search for tasks, click on the "Search" button in the navigation bar. Here, you can search for tasks based on their title or description.\n' +
               'Editing Your Own Tasks: You can only edit tasks that you have created. To edit a task, click on the task and make the necessary changes. If you need to assign the task to a different user, you can do so by adjusting the "Assignee" field.'
         },
-        {
-          title: 'Woodmart',
-          img: 'woodmart.jpg',
-          slogan: '"Bringing Nature into Your Home: Quality Wood Products for Every Room!"',
-          url: 'https://preview.themeforest.net/item/woodmart-responsive-shopify-template/full_screen_preview/21955531?_ga=2.266157647.1310448962.1677618364-130833021.1677101247&_gac=1.193103711.1677101247.CjwKCAiAl9efBhAkEiwA4Toriqhb6g9XQ3nqYRPrMlCrfaHXPDoWaG2GKFbEmgfhc73EtewOHYJGMRoC6JoQAvD_BwE',
-          github: 'https://github.com/m-petrosyan/woodmart',
-          description: ''
-        },
-        {
-          title: 'Colorizer',
-          img: 'colorizer.jpg',
-          slogan: '"Bring your vision to life with our color palettes!"',
-          url: '',
-          github: 'https://github.com/m-petrosyan/colorizer',
-          description: ''
-        },
+        // {
+        //   title: 'Woodmart',
+        //   img: 'woodmart.jpg',
+        //   slogan: '"Bringing Nature into Your Home: Quality Wood Products for Every Room!"',
+        //   url: 'https://preview.themeforest.net/item/woodmart-responsive-shopify-template/full_screen_preview/21955531?_ga=2.266157647.1310448962.1677618364-130833021.1677101247&_gac=1.193103711.1677101247.CjwKCAiAl9efBhAkEiwA4Toriqhb6g9XQ3nqYRPrMlCrfaHXPDoWaG2GKFbEmgfhc73EtewOHYJGMRoC6JoQAvD_BwE',
+        //   github: 'https://github.com/m-petrosyan/woodmart',
+        //   description: ''
+        // },
+        // {
+        //   title: 'Colorizer',
+        //   img: 'colorizer.jpg',
+        //   slogan: '"Bring your vision to life with our color palettes!"',
+        //   url: '',
+        //   github: 'https://github.com/m-petrosyan/colorizer',
+        //   description: ''
+        // },
         {
           title: 'Mpetrosyan',
           img: 'mpetrosyan.jpg',
