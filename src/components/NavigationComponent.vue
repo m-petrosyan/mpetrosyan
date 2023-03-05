@@ -1,9 +1,9 @@
 <template>
   <header :class="{'scroll':scroll}">
-    <nav class="navbar" :class="wClass">
-      <RouterLink to="/" class="logo">
+    <nav class="navbar">
+      <button class="logo" @click="goToTop">
         <img src="@/assets/images/logo.svg" alt="logo" height="25">
-      </RouterLink>
+      </button>
       <ul class="menu">
         <li v-for="item in menu" :key="item.title" :id="item.id" @click="changeHash(item.title)">
           <a :href="'#'+item.title" :class="{'active': this.hash === item.title}">{{ item.title }}</a>
@@ -48,13 +48,16 @@ export default {
     },
     changeHash(el) {
       this.hash = el
+    },
+    goToTop() {
+      window.scrollTo(0, 0);
     }
   },
 }
 </script>
 
 <style scoped lang="scss">
-
+@import 'src/assets/style/vars.scss';
 
 header {
   position: sticky;
@@ -92,12 +95,10 @@ header {
     display: flex;
     justify-content: space-between;
 
-
-    &.s {
+    @media all and (max-width: $s) {
       justify-content: center;
-
       .menu {
-        display: none;
+        display: none !important;
       }
     }
 
@@ -115,7 +116,7 @@ header {
       list-style: none;
 
       a {
-        background: linear-gradient(to right, var(--green), var(--green) 50%, #181818 50%);
+        background: linear-gradient(to right, $green, $green 50%, #181818 50%);
         text-transform: capitalize;
         font-size: 17px;
         transition: all .3s;
@@ -131,8 +132,6 @@ header {
 
         &.active {
           background-position: 0 100%;
-          //background: linear-gradient(to right, var(--green), var(--green) 50%, #181818 50%);
-          //color: var(--green);
         }
       }
     }

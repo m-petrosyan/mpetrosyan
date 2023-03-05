@@ -1,7 +1,4 @@
 export default {
-    props: {
-        wClass: String
-    },
     methods: {
         getImg(img) {
             return `url('${'src/assets/images/' + this.directory + '/' + img}')`

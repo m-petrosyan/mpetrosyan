@@ -4,12 +4,12 @@
       <h3 class="section-title">
         Portfolio
       </h3>
-      <div class="wrapper" :class="wClass">
+      <div class="wrapper">
         <div class="card" v-for="item in projects" :key="item.title">
-          <figure class="item">
+          <figure class="item" @click="openItem(item)">
             <div class="img" :style="{backgroundImage: getImg(item.img)}">
               <div class="info">
-                <a :href="item.url" target="_blank" v-if="item.url">
+                <a class="btn" @click.stop.prevent="openLink(item.url)" target="_blank" v-if="item.url">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path
                         d="M15.75 8.25a.75.75 0 01.75.75c0 1.12-.492 2.126-1.27 2.812a.75.75 0 11-.992-1.124A2.243 2.243 0 0015 9a.75.75 0 01.75-.75z"/>
@@ -17,14 +17,20 @@
                           d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM4.575 15.6a8.25 8.25 0 009.348 4.425 1.966 1.966 0 00-1.84-1.275.983.983 0 01-.97-.822l-.073-.437c-.094-.565.25-1.11.8-1.267l.99-.282c.427-.123.783-.418.982-.816l.036-.073a1.453 1.453 0 012.328-.377L16.5 15h.628a2.25 2.25 0 011.983 1.186 8.25 8.25 0 00-6.345-12.4c.044.262.18.503.389.676l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.575 15.6z"
                           clip-rule="evenodd"/>
                   </svg>
-
                 </a>
-                <a :href="item.github" target="_blank" v-if="item.github">
+                <a class="btn" @click.stop.prevent="openLink(item.github)" target="_blank" v-if="item.github">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
                     <path
                         d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                   </svg>
                 </a>
+                <button class="btn" @click.stop.prevent="openItem(item)">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd"
+                          d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
+                          clip-rule="evenodd"/>
+                  </svg>
+                </button>
               </div>
             </div>
             <div class="title">{{ item.title }}</div>
@@ -33,17 +39,21 @@
         </div>
       </div>
     </div>
+    <PortfolioModal v-if="item" v-model:item="item" :directory="directory"/>
   </section>
 </template>
 <script>
 import mainMixin from "@/mixins/mainMixin";
+import PortfolioModal from "@/components/PortfolioModal.vue";
 
 export default {
   name: "PortfolioComponent",
+  components: {PortfolioModal},
   mixins: [mainMixin],
   data() {
     return {
       directory: 'portfolio',
+      item: null,
       projects: [
         {
           title: 'Task management system',
@@ -64,7 +74,7 @@ export default {
           title: 'Woodmart',
           img: 'woodmart.jpg',
           slogan: '"Bringing Nature into Your Home: Quality Wood Products for Every Room!"',
-          url: '',
+          url: 'https://preview.themeforest.net/item/woodmart-responsive-shopify-template/full_screen_preview/21955531?_ga=2.266157647.1310448962.1677618364-130833021.1677101247&_gac=1.193103711.1677101247.CjwKCAiAl9efBhAkEiwA4Toriqhb6g9XQ3nqYRPrMlCrfaHXPDoWaG2GKFbEmgfhc73EtewOHYJGMRoC6JoQAvD_BwE',
           github: 'https://github.com/m-petrosyan/woodmart',
           description: ''
         },
@@ -77,27 +87,30 @@ export default {
           description: ''
         },
         {
-          title: 'Woodmart',
-          img: 'woodmart.jpg',
-          slogan: '"Bringing Nature into Your Home: Quality Wood Products for Every Room!"',
-          url: '',
-          github: 'https://github.com/m-petrosyan/woodmart',
+          title: 'Mpetrosyan',
+          img: 'mpetrosyan.jpg',
+          slogan: 'Personal portfolio website',
+          url: 'https://mpetrosyan.info',
+          github: 'https://github.com/m-petrosyan/mpetrosyan',
           description: ''
         },
       ]
     }
   },
   methods: {
-    startStat(entries) {
-      if (entries[0].isIntersecting)
-        console.log(entries[0])
-      // console.log(entries, observer, isIntersecting, ratio)
+    openItem(item) {
+      this.item = item
+    },
+    openLink(link) {
+      window.open(link);
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
+@import 'src/assets/style/vars.scss';
+
 #portfolio {
   .content {
     .wrapper {
@@ -105,11 +118,10 @@ export default {
       grid-template-columns: auto auto auto;
       gap: 80px 10px;
 
-      &.m {
+      @media all and (max-width: $m) {
         grid-template-columns: auto auto;
       }
-
-      &.s {
+      @media all and (max-width: $s) {
         grid-template-columns: auto;
       }
 
@@ -157,6 +169,7 @@ export default {
         }
 
         .item {
+          cursor: pointer;
           display: flex;
           flex-direction: column;
           text-align: center;
@@ -165,7 +178,7 @@ export default {
             position: relative;
             background-position: center;
             background-repeat: no-repeat;
-            background-size: contain;
+            background-size: cover;
             height: 150px;
             border-radius: 10px;
             width: 276px;
@@ -184,12 +197,21 @@ export default {
               align-items: center;
               position: absolute;
               bottom: 0;
-              background-color: #525252b5;
+              background-color: #525252db;
 
-              svg, img {
-                height: 35px;
-                color: white;
-                fill: white;
+              .btn {
+                &:hover {
+                  svg {
+                    fill: white;
+                  }
+                }
+
+                svg {
+                  transition: .3s;
+                  height: 35px;
+                  color: white;
+                  fill: #dddddd;
+                }
               }
             }
           }

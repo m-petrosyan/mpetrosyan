@@ -4,7 +4,7 @@
       <h3 class="section-title">
         Contacts
       </h3>
-      <div class="wrapper" :class="wClass">
+      <div class="wrapper">
         <a href="https://www.linkedin.com/in/miqayel-petrosyan-754349185/" target="_blank" class="item">
           <div class="icon">
             <img src="@/assets/images/contact/linkedin.png" alt="">
@@ -13,12 +13,12 @@
             Linkedin
           </div>
         </a>
-        <a href="https://www.facebook.com/miqayel.petrosyan.1/" target="_blank" class="item">
+        <a href="https://github.com/m-petrosyan" target="_blank" class="item">
           <div class="icon">
-            <img src="@/assets/images/contact/fb.png" alt="">
+            <img src="@/assets/images/contact/github.png" alt="">
           </div>
           <div class="info">
-            Facebook
+            Github
           </div>
         </a>
         <a href="tel:095101585" class="item">
@@ -62,6 +62,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import 'src/assets/style/vars.scss';
+
 #contacts {
   .content {
     .wrapper {
@@ -70,21 +72,21 @@ export default {
       flex-wrap: wrap;
       justify-content: center;
 
-      &.m {
+      @media all and (max-width: $m) {
         flex-wrap: wrap;
 
         .item {
           width: 25%;
         }
       }
-
-      &.s {
+      @media all and (max-width: $s) {
         flex-direction: column;
+        align-items: center;
       }
 
       .item {
         text-align: center;
-        color: var(--grey);
+        color: $grey;
 
         &:hover {
           .icon {

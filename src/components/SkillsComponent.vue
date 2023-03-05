@@ -4,7 +4,7 @@
       <h3 class="section-title">
         Skills
       </h3>
-      <div class="wrapper" :class="wClass">
+      <div class="wrapper">
         <div class="card" v-for="item in skills" :key="item.title">
           <figure class="item">
             <div class="logo" :style="{backgroundImage: getImg(item.img)}"/>
@@ -52,6 +52,14 @@ export default {
           img: 'jquery.svg'
         },
         {
+          title: 'PHP',
+          img: 'php.svg'
+        },
+        {
+          title: 'SQL',
+          img: 'sql.svg'
+        },
+        {
           title: 'Vue.js',
           img: 'vue.svg'
         },
@@ -62,14 +70,6 @@ export default {
         {
           title: 'React (basic)',
           img: 'react.svg'
-        },
-        {
-          title: 'PHP',
-          img: 'php.svg'
-        },
-        {
-          title: 'SQL',
-          img: 'sql.svg'
         },
         {
           title: 'Laravel',
@@ -94,6 +94,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import 'src/assets/style/vars.scss';
+
 #skills {
   .content {
     .wrapper {
@@ -101,11 +103,10 @@ export default {
       grid-template-columns: auto auto auto auto;
       gap: 30px 10px;
 
-      &.m {
+      @media all and (max-width: $m) {
         grid-template-columns: auto auto auto;
       }
-
-      &.s {
+      @media all and (max-width: $s) {
         grid-template-columns: auto auto;
       }
 

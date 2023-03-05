@@ -1,9 +1,10 @@
 <template>
-  <NavigationComponent :wClass="wClass"/>
+  <NavigationComponent/>
   <main>
-    <SkillsComponent :wClass="wClass"/>
-    <PortfolioComponent :wClass="wClass"/>
-    <ContactComponent :wClass="wClass"/>
+    <HeaderComponent/>
+    <SkillsComponent/>
+    <PortfolioComponent/>
+    <ContactComponent/>
   </main>
 </template>
 
@@ -13,10 +14,12 @@ import SkillsComponent from "@/components/SkillsComponent.vue";
 import PortfolioComponent from "@/components/PortfolioComponent.vue";
 import ContactComponent from "@/components/ContactComponent.vue";
 import appMixin from "@/mixins/appMixin";
+import HeaderComponent from "@/components/HeaderComponent.vue";
 
 export default {
   mixins: [appMixin],
   components: {
+    HeaderComponent,
     ContactComponent,
     NavigationComponent,
     SkillsComponent,
@@ -25,8 +28,6 @@ export default {
 }
 </script>
 
-<style scoped>
-main {
-//margin: auto auto 100px;
-}
+<style>
+
 </style>
