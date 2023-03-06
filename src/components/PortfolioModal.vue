@@ -9,7 +9,7 @@
           </svg>
         </button>
         <div class="info">
-          <div class="img" :style="{backgroundImage: getImg(item.img)}"/>
+          <div class="img" :style="{backgroundImage: `url(${item.img})`}"/>
           <h3 class="title"> {{ item.title }}</h3>
           <p v-html="item.description"/>
         </div>

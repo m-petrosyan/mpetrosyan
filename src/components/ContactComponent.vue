@@ -82,6 +82,9 @@ export default {
       @media all and (max-width: $s) {
         flex-direction: column;
         align-items: center;
+        .item {
+          width: unset;
+        }
       }
 
       .item {
@@ -100,10 +103,6 @@ export default {
           svg, img {
             height: 30px;
           }
-        }
-
-        .info a {
-
         }
       }
     }

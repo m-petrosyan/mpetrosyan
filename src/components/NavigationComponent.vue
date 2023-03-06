@@ -9,7 +9,7 @@
           <a :href="'#'+item.title" :class="{'active': this.hash === item.title}">{{ item.title }}</a>
         </li>
         <li>
-          <a target="_blank" href="/src/assets/other_files/cv.pdf">Cv</a>
+          <a target="_blank" :href="cv">Cv</a>
         </li>
       </ul>
     </nav>
@@ -18,12 +18,14 @@
 
 <script>
 import mainMixin from "@/mixins/mainMixin";
+import cv from "@/assets/other_files/cv.pdf"
 
 export default {
   name: "NavigationComponent",
   mixins: [mainMixin],
   data() {
     return {
+      cv: cv,
       scroll: false,
       hash: location.hash,
       menu: [
