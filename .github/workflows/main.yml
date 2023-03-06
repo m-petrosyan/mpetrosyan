@@ -16,6 +16,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           username: ${{ secrets.SSH_USERNAME }}
+          password: ${{secrets.FTP_PASSWORD}}
           script: |
             cd /home/u455927025/public_html
             git checkout -f
