@@ -37,6 +37,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import 'src/assets/style/vars.scss';
+
 .modal {
   position: fixed;
   z-index: 6;
@@ -53,7 +55,12 @@ export default {
     background-color: white;
     min-height: 200px;
     width: 80%;
+    max-width: 1000px;
     padding: 50px;
+
+    @media all and (max-width: $m) {
+      padding: 20px;
+    }
 
     .close-modal {
       position: absolute;
@@ -61,6 +68,12 @@ export default {
       top: 5px;
       color: #181818;
       width: 40px;
+
+      @media all and (max-width: $m) {
+        width: 35px;
+        right: -3px;
+        top: -3px;
+      }
     }
 
     .info {
@@ -68,13 +81,23 @@ export default {
       margin: auto;
 
       .img {
-        height: 300px;
+        height: 260px;
         background-size: contain;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: top;
+
+        @media all and (max-width: $m) {
+          height: 185px;
+        }
+        @media all and (max-width: $s) {
+          height: 122px;
+        }
+      }
+
+      .title {
+        margin-top: 20px;
       }
     }
-
   }
 }
 </style>
