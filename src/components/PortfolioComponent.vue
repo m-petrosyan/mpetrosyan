@@ -5,8 +5,10 @@
         Portfolio
       </h3>
       <div class="wrapper">
-        <div class="card" v-for="item in projects" :key="item.title">
-          <figure class="item" @click="openItem(item)">
+        <div class="card" v-for="item in projects" :key="item.title"
+             :class="{'in-progress': !item.github && !item.url }">
+          <figure class="item"
+                  @click="openModal ? openLink(item.url) :  openLink(item.github)">
             <div class="img" :style="{backgroundImage: `url(${item.img})`}">
               <div class="info">
                 <a class="btn" @click.stop.prevent="openLink(item.url)" target="_blank" v-if="item.url">
@@ -24,7 +26,7 @@
                         d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                   </svg>
                 </a>
-                <button class="btn" @click.stop.prevent="openItem(item)">
+                <button v-if="openModal" class="btn" @click.stop.prevent="openItem(item)">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                     <path fill-rule="evenodd"
                           d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
@@ -47,7 +49,6 @@ import mainMixin from "@/mixins/mainMixin";
 import PortfolioModal from "@/components/PortfolioModal.vue";
 import tms from "@/assets/images/portfolio/tms.jpg"
 import mpetrosyan from "@/assets/images/portfolio/mpetrosyan.jpg"
-import woodmart from "@/assets/images/portfolio/woodmart.jpg"
 import colorizer from "@/assets/images/portfolio/colorizer.jpg"
 
 export default {
@@ -58,12 +59,13 @@ export default {
     return {
       directory: 'portfolio',
       item: null,
+      openModal: false,
       projects: [
         {
           title: 'Task management system',
           img: tms,
           slogan: '"Get more done, stress less with our task management system."',
-          url: 'asdasd',
+          url: '',
           github: 'https://github.com/m-petrosyan/tms',
           description: 'Welcome to our task management website! Here\'s a guide on how to use platform:\n' +
               'Registering an Account: To use our website, you need to register for an account. Click on the "Register" button on the homepage and fill out the required information, including your name, email address, and password.\n' +
@@ -74,12 +76,20 @@ export default {
               'Searching for Tasks: To search for tasks, click on the "Search" button in the navigation bar. Here, you can search for tasks based on their title or description.\n' +
               'Editing Your Own Tasks: You can only edit tasks that you have created. To edit a task, click on the task and make the necessary changes. If you need to assign the task to a different user, you can do so by adjusting the "Assignee" field.'
         },
+        // {
+        //   title: 'Woodmart',
+        //   img: woodmart,
+        //   slogan: '"Bringing Nature into Your Home: Quality Wood Products for Every Room!"',
+        //   url: 'https://preview.themeforest.net/item/woodmart-responsive-shopify-template/full_screen_preview/21955531?_ga=2.266157647.1310448962.1677618364-130833021.1677101247&_gac=1.193103711.1677101247.CjwKCAiAl9efBhAkEiwA4Toriqhb6g9XQ3nqYRPrMlCrfaHXPDoWaG2GKFbEmgfhc73EtewOHYJGMRoC6JoQAvD_BwE',
+        //   github: 'https://github.com/m-petrosyan/woodmart',
+        //   description: ''
+        // },
         {
-          title: 'Woodmart',
-          img: woodmart,
-          slogan: '"Bringing Nature into Your Home: Quality Wood Products for Every Room!"',
-          url: 'https://preview.themeforest.net/item/woodmart-responsive-shopify-template/full_screen_preview/21955531?_ga=2.266157647.1310448962.1677618364-130833021.1677101247&_gac=1.193103711.1677101247.CjwKCAiAl9efBhAkEiwA4Toriqhb6g9XQ3nqYRPrMlCrfaHXPDoWaG2GKFbEmgfhc73EtewOHYJGMRoC6JoQAvD_BwE',
-          github: 'https://github.com/m-petrosyan/woodmart',
+          title: 'Mpetrosyan',
+          img: mpetrosyan,
+          slogan: 'Personal portfolio website',
+          url: 'https://mpetrosyan.com',
+          github: 'https://github.com/m-petrosyan/mpetrosyan',
           description: ''
         },
         {
@@ -87,15 +97,7 @@ export default {
           img: colorizer,
           slogan: '"Bring your vision to life with our color palettes!"',
           url: '',
-          github: 'https://github.com/m-petrosyan/colorizer',
-          description: ''
-        },
-        {
-          title: 'Mpetrosyan',
-          img: mpetrosyan,
-          slogan: 'Personal portfolio website',
-          url: 'https://mpetrosyan.com',
-          github: 'https://github.com/m-petrosyan/mpetrosyan',
+          github: '',
           description: ''
         },
       ]
@@ -131,46 +133,67 @@ export default {
 
       .card {
 
-        &:hover .item .img .info {
+        &:not(.in-progress):hover .item .img .info {
           height: 40%;
           opacity: 1;
+        }
+
+        &.in-progress {
+          position: relative;
+
+          &::before {
+            content: 'in progress';
+            font-size: 25px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+          }
+
+          figure {
+            filter: blur(3px);
+            opacity: .3;
+            pointer-events: none
+          }
         }
 
         & figure {
           position: relative;
           overflow: hidden;
-        }
 
-        & figure::before {
-          position: absolute;
-          top: 0;
-          left: -75%;
-          z-index: 1;
-          display: block;
-          content: '';
-          width: 50%;
-          height: 100%;
-          background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
-          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
-          -webkit-transform: skewX(-25deg);
-          transform: skewX(-25deg);
-        }
+          &::before {
+            position: absolute;
+            top: 0;
+            left: -75%;
+            z-index: 1;
+            display: block;
+            content: '';
+            width: 50%;
+            height: 100%;
+            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+            -webkit-transform: skewX(-25deg);
+            transform: skewX(-25deg);
+          }
 
-        & figure:hover::before {
-          -webkit-animation: shine 1.75s;
-          animation: shine 1.75s;
-        }
+          &:hover::before {
+            -webkit-animation: shine 1.75s;
+            animation: shine 1.75s;
+          }
 
-        @-webkit-keyframes shine {
-          100% {
-            left: 125%;
+          @-webkit-keyframes shine {
+            100% {
+              left: 125%;
+            }
+          }
+          @keyframes shine {
+            100% {
+              left: 125%;
+            }
           }
         }
-        @keyframes shine {
-          100% {
-            left: 125%;
-          }
-        }
+
 
         .item {
           cursor: pointer;
