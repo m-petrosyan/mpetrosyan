@@ -8,7 +8,7 @@
         <div class="card" v-for="item in projects" :key="item.title"
              :class="{'in-progress': !item.github && !item.url }">
           <figure class="item"
-                  @click="openModal ? openLink(item.url) :  openLink(item.github)">
+                  @click="openModal ? openLink(item.url) :  openLink(item.url ?? item.github)">
             <div class="img" :style="{backgroundImage: `url(${item.img})`}">
               <div class="info">
                 <a class="btn" @click.stop.prevent="openLink(item.url)" target="_blank" v-if="item.url">
@@ -65,7 +65,7 @@ export default {
           title: 'Task management system',
           img: tms,
           slogan: '"Get more done, stress less with our task management system."',
-          url: '',
+          url: 'https://tms.mpetrosyan.com/',
           github: 'https://github.com/m-petrosyan/tms',
           description: 'Welcome to our task management website! Here\'s a guide on how to use platform:\n' +
               'Registering an Account: To use our website, you need to register for an account. Click on the "Register" button on the homepage and fill out the required information, including your name, email address, and password.\n' +
@@ -96,8 +96,8 @@ export default {
           title: 'Colorizer',
           img: colorizer,
           slogan: '"Bring your vision to life with our color palettes!"',
-          url: '',
-          github: '',
+          url: 'https://colorizer.mpetrosyan.com',
+          github: null,
           description: ''
         },
       ]
