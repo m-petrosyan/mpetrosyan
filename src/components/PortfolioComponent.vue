@@ -37,6 +37,12 @@
             </div>
             <div class="title">{{ item.title }}</div>
             <div class="slogan">{{ checkLength(item.slogan) }}</div>
+            <div class="technologies">
+              <template v-for="i in technologies" :key="i.title">
+                <div class="item" v-if="item.technologies.some(el => i.title === el)"
+                     :style="{backgroundImage: `url(${i.img})`}"/>
+              </template>
+            </div>
           </figure>
         </div>
       </div>
@@ -50,11 +56,12 @@ import PortfolioModal from "@/components/PortfolioModal.vue";
 import tms from "@/assets/images/portfolio/tms.jpg"
 import mpetrosyan from "@/assets/images/portfolio/mpetrosyan.jpg"
 import colorizer from "@/assets/images/portfolio/colorizer.jpg"
+import technologiesMixin from "@/mixins/technologiesMixin";
 
 export default {
   name: "PortfolioComponent",
   components: {PortfolioModal},
-  mixins: [mainMixin],
+  mixins: [mainMixin, technologiesMixin],
   data() {
     return {
       directory: 'portfolio',
@@ -63,6 +70,7 @@ export default {
       projects: [
         {
           title: 'Task management system',
+          technologies: ['HTML 5', 'CSS 3', 'Tailwind Css', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],
           img: tms,
           slogan: '"Get more done, stress less with our task management system."',
           url: 'https://tms.mpetrosyan.com/',
@@ -86,6 +94,7 @@ export default {
         // },
         {
           title: 'Mpetrosyan',
+          technologies: ['HTML 5', 'CSS 3', 'JavaScript', 'Vue.js'],
           img: mpetrosyan,
           slogan: 'Personal portfolio website',
           url: 'https://mpetrosyan.com',
@@ -94,6 +103,7 @@ export default {
         },
         {
           title: 'Colorizer',
+          technologies: ['HTML 5', 'CSS 3', 'Tailwind Css', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],
           img: colorizer,
           slogan: '"Bring your vision to life with our color palettes!"',
           url: 'https://colorizer.mpetrosyan.com',
@@ -109,8 +119,9 @@ export default {
     },
     openLink(link) {
       window.open(link);
-    }
-  }
+    },
+
+  },
 }
 </script>
 
@@ -194,7 +205,6 @@ export default {
           }
         }
 
-
         .item {
           cursor: pointer;
           display: flex;
@@ -250,6 +260,19 @@ export default {
           .slogan {
             font-size: 14px;
             color: #808080ad;
+          }
+
+          .technologies {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+
+            .item {
+              background-repeat: no-repeat;
+              background-size: contain;
+              height: 20px;
+              width: 20px;
+            }
           }
         }
       }

@@ -12,9 +12,7 @@
             <div class="text">Web Developer</div>
           </div>
           <div class="item third">
-            <div class="text">proficient in using modern web technologies and frameworks to develop dynamic and
-              responsive websites that meet my clients' specific needs.
-            </div>
+            <div class="text">Full stack developer</div>
           </div>
         </div>
       </div>
