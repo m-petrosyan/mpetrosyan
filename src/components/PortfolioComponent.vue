@@ -55,9 +55,9 @@ import PortfolioModal from "@/components/PortfolioModal.vue";
 import tms from "@/assets/images/portfolio/tms.jpg"
 import mpetrosyan from "@/assets/images/portfolio/mpetrosyan.jpg"
 import colorizer from "@/assets/images/portfolio/colorizer.jpg"
-// import weather from "@/assets/images/portfolio/1.jpg"
 import weather from "@/assets/images/portfolio/weatherapp.jpg"
 import tmsMockup from "@/assets/images/portfolio/tmsMockup.jpg"
+import arax from "@/assets/images/portfolio/arax.jpg"
 import technologiesMixin from "@/mixins/technologiesMixin";
 
 export default {
@@ -70,6 +70,22 @@ export default {
       item: null,
       openModal: false,
       projects: [
+        {
+          title: 'AraxAlice',
+          technologies: ['HTML 5', 'CSS 3', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],
+          img: arax,
+          url: 'https://araxalice.mpetrosyan.com/',
+          github: 'https://github.com/m-petrosyan/arax',
+          description: ''
+        },
+        {
+          title: 'Colorizer',
+          technologies: ['HTML 5', 'CSS 3', 'Tailwind Css', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],
+          img: colorizer,
+          url: 'https://colorizer.mpetrosyan.com',
+          github: 'https://github.com/m-petrosyan/colorizer',
+          description: ''
+        },
         {
           title: 'Task management system',
           technologies: ['HTML 5', 'CSS 3', 'Tailwind Css', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],
@@ -88,7 +104,7 @@ export default {
         },
         {
           title: 'Weather app',
-          technologies: ['HTML 5', 'CSS 3', 'Tailwind Css', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],
+          technologies: ['HTML 5', 'CSS 3', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],
           img: weather,
           url: 'https://weatherapp.mpetrosyan.com/',
           github: 'https://github.com/m-petrosyan/weather-app',
@@ -108,14 +124,6 @@ export default {
           img: mpetrosyan,
           url: 'https://mpetrosyan.com',
           github: 'https://github.com/m-petrosyan/mpetrosyan',
-          description: ''
-        },
-        {
-          title: 'Colorizer',
-          technologies: ['HTML 5', 'CSS 3', 'Tailwind Css', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],
-          img: colorizer,
-          url: 'https://colorizer.mpetrosyan.com',
-          github: null,
           description: ''
         },
       ]
