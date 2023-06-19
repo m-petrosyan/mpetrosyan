@@ -46,6 +46,10 @@ export default {
                     title: 'SQL',
                     img: sql_icon
                 },
+                // {
+                //     title: 'C# (basic)',
+                //     img: csharp
+                // },
                 {
                     title: 'Vue.js',
                     img: vue_icon

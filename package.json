@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "postcss-media-variables": "^2.0.1",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vue-gtag-next": "^1.14.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
