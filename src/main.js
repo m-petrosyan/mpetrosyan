@@ -4,5 +4,5 @@ import './assets/style/main.scss'
 import VueGtag from "vue-gtag-next";
 
 createApp(App)
-    .use(VueGtag, {property: {id: "GA_MEASUREMENT_ID"}})
+    .use(VueGtag, {property: {id: "G-CR61YMKCTH"}})
     .mount('#app')
