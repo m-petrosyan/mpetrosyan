@@ -13,6 +13,7 @@ import laravel_icon from "@/assets/images/skills_icons/laravel.svg"
 import livewire_icon from "@/assets/images/skills_icons/livewire.svg"
 import ps_icon from "@/assets/images/skills_icons/ps.svg"
 import git_icon from "@/assets/images/skills_icons/git.svg"
+import redis_icon from "@/assets/images/skills_icons/redis.svg"
 
 export default {
     data() {
@@ -46,10 +47,10 @@ export default {
                     title: 'SQL',
                     img: sql_icon
                 },
-                // {
-                //     title: 'C# (basic)',
-                //     img: csharp
-                // },
+                {
+                    title: 'Redis',
+                    img: redis_icon
+                },
                 {
                     title: 'Vue.js',
                     img: vue_icon
