@@ -74,7 +74,7 @@ export default {
           title: 'AraxAlice',
           technologies: ['HTML 5', 'CSS 3', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],
           img: arax,
-          url: 'https://araxalice.mpetrosyan.com/',
+          url: 'https://araxalice.com/',
           github: 'https://github.com/m-petrosyan/arax',
           description: ''
         },
