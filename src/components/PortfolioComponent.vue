@@ -72,7 +72,7 @@ export default {
       projects: [
         {
           title: 'Rentall',
-          technologies: ['HTML 5', 'CSS 3', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],
+          technologies: ['HTML 5', 'CSS 3', 'Tailwind Css', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],
           img: rentall,
           url: 'https://rentall.am/',
           github: 'https://github.com/m-petrosyan/rentall',

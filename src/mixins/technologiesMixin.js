@@ -6,14 +6,14 @@ import js_icon from "@/assets/images/skills_icons/js.svg"
 import php_icon from "@/assets/images/skills_icons/php.svg"
 import sql_icon from "@/assets/images/skills_icons/sql.svg"
 import vue_icon from "@/assets/images/skills_icons/vue.svg"
-import nuxt_icon from "@/assets/images/skills_icons/nuxt.svg"
 import vuex_icon from "@/assets/images/skills_icons/vuex.svg"
 import react_icon from "@/assets/images/skills_icons/react.svg"
 import laravel_icon from "@/assets/images/skills_icons/laravel.svg"
 import livewire_icon from "@/assets/images/skills_icons/livewire.svg"
 import ps_icon from "@/assets/images/skills_icons/ps.svg"
 import git_icon from "@/assets/images/skills_icons/git.svg"
-import redis_icon from "@/assets/images/skills_icons/redis.svg"
+import inertia_icon from "@/assets/images/skills_icons/inertia.svg"
+import alpine_icon from "@/assets/images/skills_icons/alpine.svg"
 
 export default {
     data() {
@@ -48,8 +48,12 @@ export default {
                     img: sql_icon
                 },
                 {
-                    title: 'Redis',
-                    img: redis_icon
+                    title: 'Alpine.js',
+                    img: alpine_icon
+                },
+                {
+                    title: 'Inertia.js',
+                    img: inertia_icon
                 },
                 {
                     title: 'Vue.js',
@@ -58,10 +62,6 @@ export default {
                 {
                     title: 'Vuex',
                     img: vuex_icon
-                },
-                {
-                    title: 'Nuxt',
-                    img: nuxt_icon
                 },
                 {
                     title: 'React (basic)',
