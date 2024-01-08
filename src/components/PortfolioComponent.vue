@@ -56,7 +56,6 @@ import tms from "@/assets/images/portfolio/tms.jpg"
 import mpetrosyan from "@/assets/images/portfolio/mpetrosyan.jpg"
 import colorizer from "@/assets/images/portfolio/colorizer.jpg"
 import weather from "@/assets/images/portfolio/weatherapp.jpg"
-import tmsMockup from "@/assets/images/portfolio/tmsMockup.jpg"
 import arax from "@/assets/images/portfolio/arax.jpg"
 import rentall from "@/assets/images/portfolio/rentall.jpg"
 import technologiesMixin from "@/mixins/technologiesMixin";
