@@ -58,6 +58,7 @@ import colorizer from "@/assets/images/portfolio/colorizer.jpg"
 import weather from "@/assets/images/portfolio/weatherapp.jpg"
 import tmsMockup from "@/assets/images/portfolio/tmsMockup.jpg"
 import arax from "@/assets/images/portfolio/arax.jpg"
+import rentall from "@/assets/images/portfolio/rentall.jpg"
 import technologiesMixin from "@/mixins/technologiesMixin";
 
 export default {
@@ -70,6 +71,14 @@ export default {
       item: null,
       openModal: false,
       projects: [
+        {
+          title: 'Rentall',
+          technologies: ['HTML 5', 'CSS 3', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],
+          img: rentall,
+          url: 'https://rentall.am/',
+          github: 'https://github.com/m-petrosyan/rentall',
+          description: ''
+        },
         {
           title: 'AraxAlice',
           technologies: ['HTML 5', 'CSS 3', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],
