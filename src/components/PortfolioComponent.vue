@@ -98,7 +98,6 @@ export default {
           title: 'Task management system',
           technologies: ['HTML 5', 'CSS 3', 'Tailwind Css', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],
           img: tms,
-          mockup: tmsMockup,
           url: 'https://tms.mpetrosyan.com/',
           github: 'https://github.com/m-petrosyan/tms',
           description: 'Welcome to our task management website! Here\'s a guide on how to use platform:\n' +
