@@ -58,6 +58,7 @@ import colorizer from "@/assets/images/portfolio/colorizer.jpg"
 import weather from "@/assets/images/portfolio/weatherapp.jpg"
 import arax from "@/assets/images/portfolio/arax.jpg"
 import rentall from "@/assets/images/portfolio/rentall.jpg"
+import guess_the_movie from "@/assets/images/portfolio/guessthemovie.jpg"
 import technologiesMixin from "@/mixins/technologiesMixin";
 
 export default {
@@ -70,6 +71,14 @@ export default {
       item: null,
       openModal: false,
       projects: [
+        {
+          title: 'Guess The Movie (telegram bot)',
+          technologies: ['PHP', 'SQL', 'Laravel'],
+          img: guess_the_movie,
+          url: 'https://t.me/GuessTheMoviesbot',
+          github: 'https://github.com/m-petrosyan/movie-telegram-bot',
+          description: ''
+        },
         {
           title: 'Rentall',
           technologies: ['HTML 5', 'CSS 3', 'Tailwind Css', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],

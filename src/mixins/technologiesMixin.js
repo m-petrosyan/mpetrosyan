@@ -7,7 +7,7 @@ import php_icon from "@/assets/images/skills_icons/php.svg"
 import sql_icon from "@/assets/images/skills_icons/sql.svg"
 import vue_icon from "@/assets/images/skills_icons/vue.svg"
 import vuex_icon from "@/assets/images/skills_icons/vuex.svg"
-import react_icon from "@/assets/images/skills_icons/react.svg"
+import telegram_bot from "@/assets/images/skills_icons/telegram_bot.svg"
 import laravel_icon from "@/assets/images/skills_icons/laravel.svg"
 import livewire_icon from "@/assets/images/skills_icons/livewire.svg"
 import ps_icon from "@/assets/images/skills_icons/ps.svg"
@@ -48,6 +48,10 @@ export default {
                     img: sql_icon
                 },
                 {
+                    title: 'Telegram bot',
+                    img: telegram_bot
+                },
+                {
                     title: 'Alpine.js',
                     img: alpine_icon
                 },
@@ -62,10 +66,6 @@ export default {
                 {
                     title: 'Vuex',
                     img: vuex_icon
-                },
-                {
-                    title: 'React (basic)',
-                    img: react_icon
                 },
                 {
                     title: 'Laravel',
