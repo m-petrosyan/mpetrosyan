@@ -59,6 +59,7 @@ import weather from "@/assets/images/portfolio/weatherapp.jpg"
 import arax from "@/assets/images/portfolio/arax.jpg"
 import rentall from "@/assets/images/portfolio/rentall.jpg"
 import guess_the_movie from "@/assets/images/portfolio/guessthemovie.jpg"
+import metal_events from "@/assets/images/portfolio/metalevents.jpg"
 import technologiesMixin from "@/mixins/technologiesMixin";
 
 export default {
@@ -71,6 +72,12 @@ export default {
       item: null,
       openModal: false,
       projects: [
+        {
+          title: 'Rock/metal events (telegram bot)',
+          technologies: ['HTML 5', 'CSS 3', 'Tailwind Css', 'JavaScript', 'PHP','Telegram api', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],
+          img: metal_events,
+          url: 'https://t.me/RockMetalEventsbot',
+        },
         {
           title: 'Guess The Movie (telegram bot)',
           technologies: ['PHP', 'SQL', 'Laravel'],
