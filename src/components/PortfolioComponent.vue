@@ -102,14 +102,14 @@ export default {
           github: 'https://github.com/m-petrosyan/arax',
           description: ''
         },
-        {
-          title: 'Colorizer',
-          technologies: ['HTML 5', 'CSS 3', 'Tailwind Css', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],
-          img: colorizer,
-          url: 'https://colorizer.mpetrosyan.com',
-          github: 'https://github.com/m-petrosyan/colorizer',
-          description: ''
-        },
+        // {
+        //   title: 'Colorizer',
+        //   technologies: ['HTML 5', 'CSS 3', 'Tailwind Css', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],
+        //   img: colorizer,
+        //   url: 'https://colorizer.mpetrosyan.com',
+        //   github: 'https://github.com/m-petrosyan/colorizer',
+        //   description: ''
+        // },
         {
           title: 'Task management system',
           technologies: ['HTML 5', 'CSS 3', 'Tailwind Css', 'JavaScript', 'PHP', 'SQL', 'Laravel', 'Vue.js', 'Vuex'],

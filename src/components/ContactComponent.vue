@@ -31,7 +31,7 @@
             </svg>
           </div>
           <div class="info">
-            095101585
+            +374 95101585
           </div>
         </a>
         <a href="mailto:miqayelpetrosyan@gmail.com" class="item">
